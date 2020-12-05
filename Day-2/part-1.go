@@ -68,9 +68,7 @@ func fileReader() {
 		if err != nil && err != io.EOF {
 			break
 		}
-		// fmt.Print(string(b))
 		x, y, focus, data := matchRegex(string(b))
-		// fmt.Printf("%v\n%v\n%v\n%v\n", x, y, focus, data)
 
 		counter = counter + followsRules(x, y, focus, data)
 
@@ -82,27 +80,6 @@ func fileReader() {
 	fmt.Println(counter)
 }
 
-// TODO:
 func main() {
 	fileReader()
-	//Isolated instance
-	// x, y, focus, data := matchRegex("19-20b: bbbbbbbbbbbbbbbbbhffdasfdasfdsdasfdgfbbb")
-	// fmt.Printf("%v\n%v\n%v\n%v\n", x, y, focus, data)
-	// if followsRules(x, y, focus, data) == 1 {
-	// 	fmt.Println("true")
-	// }
-
-	// a := 1
-	// fmt.Println(os.Args)
-	// for a+2 <= (len(os.Args) + 1) {
-	// 	fmt.Println(os.Args[a : a+3])
-
-	// 	// x, y, focus, data := matchRegex(strings.Join(os.Args[a:a+3], ","))
-	// 	// breaksRules(x, y, focus, data)
-
-	// 	a = a + 3
-	// 	// fmt.Println(a)
-
-	// }
-
 }
